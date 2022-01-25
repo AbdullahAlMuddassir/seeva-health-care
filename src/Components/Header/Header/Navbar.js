@@ -7,9 +7,9 @@ const Navbar = () => {
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-12'>
-                    <nav class="navbar navbar-expand-lg fixed-top">
+                    <nav class="navbar navbar-expand-lg">
                             <div class="container-fluid">
-                                <Link class="navbar-brand" to="#">Welcome to Seeva</Link>
+                                <Link class="navbar-brand" to="/">Welcome to Seeva</Link>
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                                 </button>
@@ -22,7 +22,10 @@ const Navbar = () => {
                                     <Link to="/about" className='nav-link active'>About</Link>
                                     </li>
                                     <li class="nav-item">
-                                    <Link to="/service" className='nav-link active'>Service</Link>
+                                    <Link to="/service" className='nav-link active'>Services</Link>
+                                    </li>
+                                    <li class="nav-item">
+                                    <Link to="/login" className='nav-link active'>Login</Link>
                                     </li>
                                 </ul>
                                 </div>
