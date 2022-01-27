@@ -9,6 +9,8 @@ import Services from './Components/Services/Services';
 import NotFound from './Components/Not-Found/NotFound';
 import Login from './Components/Header/Login/Login';
 import Register from './Components/Header/Register/Register';
+import Product from './Components/Services/Product';
+import PrivateRout from './Components/Header/PrivateRoute';
 function App() {
   return (
     <div className="App">
@@ -17,7 +19,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="about" element={<About/>} />
-        <Route path="service" element={<Services/>} />
+        <Route path="service" element={<Services/>}>
+        <Route path="product" element={<PrivateRout><Product/></PrivateRout>} />
+        </Route>
         <Route path="login" element={<Login/>} />
         <Route path="register" element={<Register/>} />
         <Route path="*" element={<NotFound />} />

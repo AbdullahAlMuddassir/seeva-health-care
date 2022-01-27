@@ -10,6 +10,8 @@ const useFirebase = ()=>{
         return signInWithPopup(auth, googleProvider)
     }
     return{
+        user,
+        setUser,
         googleSignInUse
     }
 }

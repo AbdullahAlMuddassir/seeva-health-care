@@ -1,9 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useFirebase from '../../Hooks/UseFirebase';
+import Product from '../../Services/Product';
 
 const Register = () => {
-    const {googleSignInUse}=useFirebase();
+    const {user,setUser,googleSignInUse}=useFirebase();
+    const Navigate =useNavigate();
+    const handleGoogleRegistration =()=>{
+        googleSignInUse()
+        .then (res =>{
+            setUser(res.user)
+            Navigate("product");
+        })
+    }
     return (
         <div>
             <section className='section'>
@@ -12,6 +21,10 @@ const Register = () => {
                         <div className='col-md-12'>
                             <h2>Please Register</h2>
                             <form>
+                                <div class="mb-3">
+                                <label for="inputEmail4" class="form-label">Name</label>
+                                    <input type="email" class="form-control" id="inputEmail4"/>
+                                </div>
                                 <div class="mb-3">
                                 <label for="inputEmail4" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="inputEmail4"/>
@@ -29,7 +42,7 @@ const Register = () => {
                             <p>Already Have a account? <Link to="/login">Login</Link></p>
                             <div>
                                  ---------OR-------
-                                <button className=' btn btn-primary' onClick={googleSignInUse}>Google Sing in</button>
+                                <button className=' btn btn-primary' onClick={handleGoogleRegistration }>Google Sing in</button>
                             </div>
                         </div>
                     </div>
