@@ -7,7 +7,7 @@ const Login = () => {
     const navigate = useNavigate();
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
-    const { registerUser,setUser,setUseLoding,googleSignInUse,loginWithEmailandPassword} = useAuth();
+    const { setUser,setUseLoding,googleSignInUse,loginWithEmailandPassword} = useAuth();
     const handleGetEmail =(e)=>{
         setEmail(e.target.value)
     }
@@ -29,21 +29,6 @@ const Login = () => {
         })
         .finally (()=> setUseLoding(false));
     }
-    // const handleOnBlur = e => {
-    //     const field = e.target.name;
-    //     const value = e.target.value;
-    //     const newLoginData = { ...loginData };
-    //     newLoginData[field] = value;
-    //     setLoginData(newLoginData);
-    // }
-    // const handleLoginSubmit = e => {
-    //     if (loginData.password !== loginData.password2) {
-    //         alert('Your password did not match');
-    //         return
-    //     }
-    //     registerUser(loginData.email, loginData.password, loginData.name, navigate);
-    //     e.preventDefault();
-    // }
     const handleGoogleSingIn = () => {
         googleSignInUse(location, navigate)
     }
@@ -80,3 +65,18 @@ const Login = () => {
 };
 
 export default Login;
+// const handleOnBlur = e => {
+    //     const field = e.target.name;
+    //     const value = e.target.value;
+    //     const newLoginData = { ...loginData };
+    //     newLoginData[field] = value;
+    //     setLoginData(newLoginData);
+    // }
+    // const handleLoginSubmit = e => {
+    //     if (loginData.password !== loginData.password2) {
+    //         alert('Your password did not match');
+    //         return
+    //     }
+    //     registerUser(loginData.email, loginData.password, loginData.name, navigate);
+    //     e.preventDefault();
+    // }

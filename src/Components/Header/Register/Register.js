@@ -66,10 +66,10 @@ const Register = () => {
                                     <label for="exampleInputPassword1" className="form-label">Password</label>
                                     <input type="password" className="form-control" id="exampleInputPassword1" onBlur={handleGetPassword}/>
                                 </div>
-                                <div class="mb-3">
+                                {/* <div class="mb-3">
                                     <label for="exampleInputPassword1" className="form-label">Re-enter-password</label>
                                     <input type="password" className="form-control" id="exampleInputPassword1" onBlur={handleGetPassword}/>
-                                </div>
+                                </div> */}
                                 <button type="submit" className="btn btn-primary">Register</button>
                             </form>
                             }

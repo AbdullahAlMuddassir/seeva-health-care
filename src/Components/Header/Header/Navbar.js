@@ -32,7 +32,7 @@ const Navbar = () => {
                                     <li class="nav-item">
                                     <Link to="/login" className='nav-link active'>Login</Link>
                                     </li>}
-                                    <p className='text-white'>Name:{user?.displayName}</p>
+                                    <p className='text-white'>{user?.displayName}</p>
                                 </ul>
                                 </div>
                             </div>
